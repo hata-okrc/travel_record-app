@@ -58,7 +58,7 @@ func (tr *tripRepository) UpdateTrip(trip *model.Trip, userId uint, tripId uint)
 }
 
 func (tr *tripRepository) DeleteTrip(userId uint, tripId uint) error {
-	result := tr.db.Where("id=? AND user_id=?", tripId, userId).Delete(&model.Task{})
+	result := tr.db.Where("id=? AND user_id=?", tripId, userId).Delete(&model.Trip{})
 	if result.Error != nil {
 		return result.Error
 	}
