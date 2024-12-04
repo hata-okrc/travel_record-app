@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"github.com/hata-okrc/travel_record-app.git/controller"
+	"github.com/hata-okrc/travel_record-app.git/db"
+	"github.com/hata-okrc/travel_record-app.git/repository"
+	"github.com/hata-okrc/travel_record-app.git/router"
+	"github.com/hata-okrc/travel_record-app.git/usecase"
+)
+
 
 func main() {
-	fmt.Println("main func")
+	db := db.NewDB()
+	userRepository := repository.NewUserRepository(db)
+	userUsecase := usecase.NewUserUsecase(userRepository)
+	userController := controller.NewUserController(userUsecase)
+	e := router.NewRouter(userController)
+	e.Logger.Fatal(e.Start(":8080"))
+
 }

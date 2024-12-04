@@ -17,3 +17,14 @@ services:
     tty: true
     ports:
       - 5173:5173
+  db:
+    image: postgres:16.4-alpine3.20
+    ports:
+      - 5432:5432
+
+    environment:
+      POSTGRES_USER: ht
+      POSTGRES_PASSWORD: psht
+      POSTGRES_DB: myapp-db
+    # volumes:
+    #   - db-store:/var/lib/postgresql/data
