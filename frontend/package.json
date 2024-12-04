@@ -12,11 +12,6 @@
     "lint": "eslint src",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ]
-  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -43,5 +38,10 @@
     "vite": "^5.4.9",
     "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.1.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
