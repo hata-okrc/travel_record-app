@@ -11,6 +11,6 @@ test("TextInput Component Test", async () => {
   expect(textElement);
 
   const inputElement = screen.getByLabelText("Text Input");
-  await user.type(inputElement, "what a beautiful World");
+  await user.type(inputElement, "what a beautiful");
   expect(screen.getByText("Entered Text: Hello World"));
 });
